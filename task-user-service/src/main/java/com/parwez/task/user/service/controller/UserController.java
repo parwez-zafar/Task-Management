@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @GetMapping("/users")
+    @GetMapping("/allusers")
     public ResponseEntity<List<User>> getAllUser(@RequestHeader("Authorization") String jwt){
         List<User> users = userService.getAllUser();
         return new ResponseEntity<>(users, HttpStatus.OK);
